@@ -2,74 +2,94 @@
 
 ## Important commands
 
-Syntax example:
-`docker run -d -p 6000:6379 —name <container name> <container image>:<version>`
+- Syntax example:
 
-Pull container:
-`docker pull <image tag of container>`
+  - `docker run -d -p 6000:6379 —name <container name> <container image>:<version>`
 
-Create new container from image. If image cannot be found locally it will pull first:
-`docker run <image tag of container>`
+- Pull container:
 
-Start in detached mode:
-`docker run -d <image tag of container>`
+  - `docker pull <image tag of container>`
 
-Starts and binds the container to localhost port 6000 and default port 6379 of the container. When running multiple containers the localhost port must be different, container port can be the same:
-`docker run -p 6000:6379 <image tag of container>`
+- Create new container from image. If image cannot be found locally it will pull first:
 
-Start already created and stopped container:
-`docker start <id of container or name>`
+  - `docker run <image tag of container>`
 
-Stop container with id:
-`docker stop <id of container>`
+- Start in detached mode:
 
-Shows all containers running or not running:
-`docker ps`
+  - `docker run -d <image tag of container>`
 
-Delete a container:
-`docker rm <id of container>`
+- Starts and binds the container to localhost port 6000 and default port 6379 of the container. When running multiple containers the localhost port must be different, container port can be the same:
 
-Delete a docker image:
-`docker rmi <id of image>`
+  - `docker run -p 6000:6379 <image tag of container>`
 
-Shows images on your local machine:
-`docker images`
+- Start already created and stopped container:
 
-Show logs for debugging:
-`docker logs <container id>` or `docker logs <container name>`
+  - `docker start <id of container or name>`
 
-Show only last of logs:
-`docker logs <container id> | tail`
+- Stop container with id:
 
-Strings the logs. Let’s you draw a line —— in terminal to mark the last logs, only new logs are shown after that line:
-`docker logs <container id> -f`
+  - `docker stop <id of container>`
 
-Specifies a custom name for container:
-`—name <name of container>`
+- Shows all containers running or not running:
 
-Executes integrated terminal in directory /bin/bash of container. Let’s you browse the files, configs and directories of the container.
-Note: Some containers don't have a bin/bash directory. Alternative can be /bin/sh. One of those two always works:
-`docker exec -it <container id or name> /bin/bash`
+  - `docker ps`
+
+- Delete a container:
+
+  - `docker rm <id of container>`
+
+- Delete a docker image:
+  `docker rmi <id of image>`
+
+- Shows images on your local machine:
+
+  - `docker images`
+
+- Show logs for debugging:
+
+  - `docker logs <container id>` or `docker logs <container name>`
+
+- Show only last of logs:
+
+  - `docker logs <container id> | tail`
+
+- Strings the logs. Let’s you draw a line —— in terminal to mark the last logs, only new logs are shown after that line:
+
+  - `docker logs <container id> -f`
+
+- Specifies a custom name for container:
+
+  - `—name <name of container>`
+
+- Executes integrated terminal in directory /bin/bash of container. Let’s you browse the files, configs and directories of the container.
+  Note: Some containers don't have a bin/bash directory. Alternative can be /bin/sh. One of those two always works:
+
+  - `docker exec -it <container id or name> /bin/bash`
 
 - Inside the integrated terminal we can run following commands:
+
   - `env` - print environment variables
   - `exit` - exits -it terminal
 
-Show all docker networks:
-`docker network ls`
+- Show all docker networks:
 
-Create new docker network:
-`docker network create <network-name>`
+  - `docker network ls`
 
-Set environment variable on docker run:
-`docker -e <environment variable>`
+- Create new docker network:
 
-Connect container to docker network:
-`docker —net <network name>`
+  - `docker network create <network-name>`
 
-Build a docker file:
-`docker build -t <own image name>:<version of own image> <location of docker file>`
-Example: `docker build -t my-app:1.0 .`
+- Set environment variable on docker run:
+
+  - `docker -e <environment variable>`
+
+- Connect container to docker network:
+
+  - `docker —net <network name>`
+
+- Build a docker file:
+  - `docker build -t <own image name>:<version of own image> <location of docker file>`
+    Example: `docker build -t my-app:1.0 .`
 
 ### Example:
 
